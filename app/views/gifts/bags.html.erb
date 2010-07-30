@@ -1,0 +1,18 @@
+<h1>Bags gift: <%= @gift.name %></h1>
+
+<% form_for(@gift) do |f| %>
+
+  <p>Please enter some codename to book this gift. If you want to unbags a gift, you will need to enter this codename. And you can check what gifts you have bagsed under that codename.</p>
+  
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :gifter, "Codename" %><br />
+    <%= f.text_field :gifter %>
+  </p>
+  
+  <p>
+    <%= f.submit "Bags" %>
+  </p>
+
+<% end %>

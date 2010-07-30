@@ -1,0 +1,29 @@
+<h1>Gifts taken by codename <%= @codename %> x </h1>
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+  <br />
+<%end%>
+
+
+<% if @gifts %>  
+<table>
+  <tr>
+    <th>Gift</th>
+    <th>Description</th>
+  </tr>
+  <% for gift in @gifts %>  
+    <tr>  
+      <td><%=h gift.name %></td>  
+      <td><%=h gift.description %></td>  
+      <td>
+        <%= link_to 'Remove', unbags_gift_path(gift) %>
+      </td> 
+    </tr> 
+  <% end %> 
+</table> 
+<% else %>
+  There are no gifts bagsed under that codename.
+<% end %>
+
+<%= link_to 'Back to the Wishlist', gifts_path %>
