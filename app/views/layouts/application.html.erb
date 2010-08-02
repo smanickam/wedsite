@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= title %></title>
+    <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print.css',  :media => 'print' %>
+    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %> 
+  </head>
+  <body>
+    <div class="container">
+      <div id="header" class="round">
+        <h2>James & Saritha</h2>
+        <h4>September 26th 2010</h4>
+        <% logo = image_tag("logo.png", :alt => "Home", :class => "round") %>
+        <%= link_to logo, root_path %>
+        <ul class="navigation round">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Venue", venue_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
+          <li><%= link_to "Gifts", gifts_path  %></li>
+          <li><%= link_to "Updates", posts_path %></li>
+        </ul>
+      </div>
+      <div id="content" class="round">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <ul class="navigation round">
+          <li><%= link_to "About", '#' %></li>
+          <li><%= link_to "Contact", '#' %></li>
+          <li><a href="http://www.abc.net.au/news/">ABC News</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+

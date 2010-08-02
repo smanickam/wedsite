@@ -1,0 +1,134 @@
+.container {
+  width: 830px;
+  background: #7a3;
+  border-style: double;
+  margin-top: 40px;
+}
+
+body {
+  background: #FB9517; /* #cff; */
+}
+
+#header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#header img {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  background: #fff;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 780px;
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+#home_content {
+ float: left;
+ width: 500px;
+ background: #0ff;
+}
+
+#sidebar {
+  float: right;
+  width: 200px;
+  background: #f0f;
+}
+
+
+#footer {
+  margin-top: 5px;
+  width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*The navigation class has been modified for the footer id */
+#footer .navigation {
+  float: none;
+  text-align: center;
+}
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+/* Navigation */
+/* Navigation bar class is modified slightly for the footer id */
+
+.navigation {
+/*  float: right;*/
+/*  text-align: center; */
+}
+
+.navigation {
+  background-color: white;
+  padding: 0px 0.7em;
+  white-space: nowrap;
+}
+
+/* When a <ul> has navigation class applied to it */
+ul.navigation {
+  margin: 0;
+}
+/* When an <li> tag is within an element with class navigation */
+.navigation li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0px;
+}
+
+.navigation li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+.navigation li a:visited {
+  color: #09c;
+}
+
+.navigation li a:hover {
+  text-decoration: underline;
+}
+
+/* Sign up button */
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  background: #006400;
+  display: block;
+  width: 190px;
+  text-align: center;
+  padding: 20px;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+/* Round corners */
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
