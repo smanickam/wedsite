@@ -1,28 +1,23 @@
+<script>
+document.getElementById("posts").setAttribute("class", "active");
+</script>
 <p>
-  <b>Name:</b>
-  <%=h @post.name %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%=h @post.title %>
-</p>
-
-<p>
-  <b>Content:</b>
+  <b><%=h @post.title %></b>
+  <br/>
   <%=h @post.content %>
 </p>
-
-<p>
-  <b>Comments:</b>
-  <% @post.comments.each do |c| %>
-    <p>
-      <b><%=h c.commenter %></b>
-      <%=h c.body %>
-    </p>
+  <% if @post.comments.size > 0 %>
+    <hr>
+    <b>Comments:</b><br/> <br/>
+    <% @post.comments.each do |c| %>
+      <p>
+        <b><%=h c.commenter %>: </b>
+        <%=h c.body %>
+      </p>
+    <% end %>
+  <% else %>
+    (No comments yet.) <br/> 
   <% end %>
-</p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Manage Comments', post_comments_path(@post) %> |
+<%= link_to 'New Comment', new_post_comment_path(@post) %> |
 <%= link_to 'Back to Posts', posts_path %>

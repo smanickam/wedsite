@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.build(params[:comment])
     if @comment.save
-      redirect_to post_comment_path(@post, @comment)
+      redirect_to post_path(@post)
     else
       render :action => "new"
     end

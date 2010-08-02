@@ -1,5 +1,8 @@
-<h1>New Comment</h1>
+<script>
+document.getElementById("posts").setAttribute("class", "active");
+</script>
+<h1>New Comment for '<%=@post.title%>'</h1>
 
 <%= render :partial => "form" %>
 
-<%= link_to 'Back', post_comments_path(@post) %>
+<%= link_to 'Back to post', post_path(@post) %>

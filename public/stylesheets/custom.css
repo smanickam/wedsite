@@ -1,19 +1,32 @@
 .container {
   width: 830px;
-  background: #7a3;
-  border-style: double;
+  background: white; /*#7a3;*/
   margin-top: 40px;
+  border: double;
 }
 
 body {
-  background: #FB9517; /* #cff; */
+  background:#FB9517;
+}
+
+#header h1 {
+  margin-top: 0.4em;
+  margin-bottom: 0.3em;
+  font-family: serif;
+  color: #404;
+}
+
+#header h3 {
+  color: #404;
+  font-family: serif;
 }
 
 #header {
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
+  background: url(/images/header-bg-3.png);
+  color: #f0f;
 }
+
 
 #header img {
   margin-left: auto;
@@ -25,11 +38,20 @@ body {
 #content {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1px;
   width: 780px;
-  margin-top: 1em;
+  /*margin-top: 1em;*/
   font-size: 120%;
   padding: 20px;
   background: #fff;
+  border: solid;
+  border-color:#FB9517; /*#FFAE54;*/
+}
+
+#content h1 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
 }
 
 #home_content {
@@ -52,11 +74,6 @@ body {
   margin-right: auto;
 }
 
-/*The navigation class has been modified for the footer id */
-#footer .navigation {
-  float: none;
-  text-align: center;
-}
 
 /* Links */
 
@@ -75,41 +92,58 @@ a:visited {
 }
 
 /* Navigation */
-/* Navigation bar class is modified slightly for the footer id */
-
-.navigation {
-/*  float: right;*/
-/*  text-align: center; */
-}
 
 .navigation {
   background-color: white;
-  padding: 0px 0.7em;
   white-space: nowrap;
+  text-align: center;
+}
+
+#header .navigation {
+  font-size: 130%;
+}
+
+#footer .navigation {
+  padding: 0.2em;
 }
 
 /* When a <ul> has navigation class applied to it */
 ul.navigation {
   margin: 0;
+  padding: 0px;
 }
 /* When an <li> tag is within an element with class navigation */
+#header .navigation li {
+  background: url(/images/faded-tab-40px.png) no-repeat 0 0;
+  width: 112px;
+  height: 28px;
+  padding: 12px 0px 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 .navigation li {
-  list-style-type: none;
   display: inline-block;
-  padding: 0.2em 0px;
+  padding: 0.5em;
 }
 
 .navigation li a {
-  padding: 0 5px;
-  font-weight: bold;
+color: #404;
 }
 
 .navigation li a:visited {
-  color: #09c;
+  /*color: #09c;*/
+  color: #404;
 }
 
 .navigation li a:hover {
   text-decoration: underline;
+  color: #404;
+}
+
+#header .navigation li.active {
+  font-weight: bold;
+  background: url(/images/bright-tab-1.png) no-repeat 0 0;
 }
 
 /* Sign up button */

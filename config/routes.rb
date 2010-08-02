@@ -2,10 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts, :has_many => :comments
   map.resources :gifts, :member => { :bags => :get, :unbags => :get}, 
     :collection => {:search_gifter => :get}
-  
+  map.venue '/venue', :controller => 'pages', :action => 'venue'
+  map.faq '/faq', :controller => 'pages', :action => 'faq'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.root :controller => "home"
+  map.root :controller => 'pages', :action => 'home'
 end
   # The priority is based upon order of creation: first created -> highest priority.
 

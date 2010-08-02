@@ -9,23 +9,26 @@
     <%= stylesheet_link_tag 'custom', :media => 'screen' %> 
   </head>
   <body>
-    <div class="container">
+    <div class="container round">
       <div id="header" class="round">
-        <h2>James & Saritha</h2>
-        <h4>September 26th 2010</h4>
-        <% logo = image_tag("logo.png", :alt => "Home", :class => "round") %>
+        <h1>James & Saritha</h1>
+        <h3>September 26th 2010</h3>
+       <!--
+       <% logo = image_tag("logo.png", :alt => "Home", :class => "round") %>
         <%= link_to logo, root_path %>
+        -->
         <ul class="navigation round">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Venue", venue_path %></li>
-          <li><%= link_to "FAQ", faq_path %></li>
-          <li><%= link_to "Gifts", gifts_path  %></li>
-          <li><%= link_to "Updates", posts_path %></li>
+          <li id="home"><%= link_to "Home", root_path %></li>
+          <li id="venue"><%= link_to "Venue", venue_path %></li>
+          <li id="faq"><%= link_to "FAQ", faq_path %></li>
+          <li id="gifts"><%= link_to "Gifts", gifts_path  %></li>
+          <li id="posts"><%= link_to "Updates", posts_path %></li>
         </ul>
       </div>
       <div id="content" class="round">
         <%= yield %>
       </div>
+      <!--
       <div id="footer">
         <ul class="navigation round">
           <li><%= link_to "About", '#' %></li>
@@ -33,6 +36,7 @@
           <li><a href="http://www.abc.net.au/news/">ABC News</a></li>
         </ul>
       </div>
+      -->
     </div>
   </body>
 </html>

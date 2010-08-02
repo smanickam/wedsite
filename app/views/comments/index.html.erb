@@ -1,26 +1,22 @@
-<h1>Comments for <%= @post.title %></h1>
+<script>
+document.getElementById("posts").setAttribute("class", "active");
+</script>
+<h1><%= @post.comments.size %> comment(s) for <%= @post.title %></h1>
+<p>
+  <%= link_to 'New Comment', new_post_comment_path(@post) %> | 
+  <%= link_to 'Back to Post', @post %>
+</p>
 
-<table>
-  <tr>
-    <th>Commenter</th>
-    <th>Body</th>
-  </tr>
+<% for comment in @post.comments %>
+    <p>
+        <b><%=h comment.commenter %>: </b>
+        <%=h comment.body %>
+        <br/>
+        <%=h comment.updated_at %>
+    </p>
+<% end %>
 
-  <% for comment in @post.comments %>
-    <tr>
-      <td><%=h comment.commenter %></td>
-      <td><%=h comment.body %></td>
-      <td><%= link_to 'Show', post_comment_path(@post, comment)%></td>
-      <td><%= link_to 'Edit', edit_post_comment_path(@post, comment)%></td>
-      <td>
-        <%= link_to 'Destroy', post_comment_path(@post, comment),
-          :confirm => 'Are you sure?', :method => :delete %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Comment', new_post_comment_path(@post) %>
-<%= link_to 'Back to Post', @post %>
+<% if @post.comments.size > 1 %>
+  <%= link_to 'New Comment', new_post_comment_path(@post) %> | 
+  <%= link_to 'Back to Post', @post %>
+<% end %>
